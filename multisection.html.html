@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Stock Market Insights</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#07140d,#0b3d2e,#14532d);
+color:white;
+scroll-behavior:smooth;
+}
+
+/* Header */
+header{
+text-align:center;
+padding:70px 20px;
+}
+
+h1{
+font-size:50px;
+margin-bottom:15px;
+}
+
+header p{
+font-size:20px;
+opacity:.9;
+}
+
+/* Navbar */
+nav{
+display:flex;
+justify-content:center;
+gap:25px;
+padding:18px;
+background:rgba(0,0,0,.35);
+position:sticky;
+top:0;
+}
+
+nav a{
+color:#86efac;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:white;
+}
+
+/* Sections */
+section{
+padding:60px 10%;
+max-width:1100px;
+margin:auto;
+}
+
+/* Cards */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+padding:25px;
+border-radius:14px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+/* Button */
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 28px;
+background:linear-gradient(90deg,#16a34a,#22c55e);
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* Chart bars */
+.bar{
+height:28px;
+width:0;
+margin:14px 0;
+background:linear-gradient(90deg,#34d399,#22c55e);
+border-radius:6px;
+transition:1.5s;
+}
+
+/* Footer */
+footer{
+margin-top:50px;
+padding:20px;
+text-align:center;
+background:rgba(0,0,0,.3);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Stock Market Insights</h1>
+<p>Understanding markets, investments and trading</p>
+</header>
+
+
+<nav>
+<a href="#about">About</a>
+<a href="#sectors">Sectors</a>
+<a href="#growth">Growth</a>
+<a href="#careers">Careers</a>
+</nav>
+
+
+
+<section id="about">
+
+<div class="card">
+<h2>What is the Stock Market?</h2>
+
+<p>
+The stock market allows investors to buy and sell ownership
+in companies. It plays a major role in wealth creation,
+capital growth and economic development.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section id="sectors">
+
+<h2>Major Market Sectors</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Technology</h3>
+<p>Growth-driven sector with innovation focus.</p>
+</div>
+
+<div class="card">
+<h3>Banking</h3>
+<p>Core financial institutions and investment activity.</p>
+</div>
+
+<div class="card">
+<h3>Energy</h3>
+<p>Traditional and renewable market players.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="growth">
+
+<div class="card">
+<h2>Sector Growth Simulation</h2>
+<p>Illustrative market performance chart</p>
+
+<div class="bar" data-width="90%"></div>
+Tech 90%
+
+<div class="bar" data-width="70%"></div>
+Finance 70%
+
+<div class="bar" data-width="60%"></div>
+Energy 60%
+
+<div class="bar" data-width="82%"></div>
+Healthcare 82%
+
+<a class="btn"
+href="https://www.marketwatch.com"
+target="_blank">
+View Market News
+</a>
+
+</div>
+
+</section>
+
+
+
+<section id="careers">
+
+<div class="card">
+<h2>Career Opportunities</h2>
+
+<p>
+The stock market field includes roles such as
+Financial Analyst, Equity Researcher,
+Portfolio Manager and Trader.
+</p>
+
+</div>
+
+</section>
+
+
+
+<footer>
+@ Vaishnavi Kolekar (rollno:06) <br>
+Open Elective Web Page 2026
+</footer>
+
+
+<script>
+
+/* Animate bars when visible */
+const bars=document.querySelectorAll('.bar');
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+bars.forEach(bar=>{
+bar.style.width=bar.dataset.width;
+});
+}
+});
+});
+
+observer.observe(document.querySelector('#growth'));
+
+</script>
+
+</body>
+</html>
